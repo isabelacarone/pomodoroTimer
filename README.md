@@ -12,3 +12,7 @@ PomodoroTimer é um app mobile em React Native que utiliza a técnica Pomodoro p
 
 ## UVV
 - Trabalho da matéria de desenvolvimento mobile, matéria ministrada pelo professor Wagner Perin
+
+
+## Acesso
+- Para entrar na tela de login é preciso inserir o usuário (admin) e a senha (senha)
