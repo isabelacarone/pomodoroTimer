@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -10,6 +9,7 @@ export default function Login({ navigation }) {
   const [mensagem, setMensagem] = useState('');
 
   useEffect(() => {
+    // aqui é criado o usuário novo ouu pega os dados os usuários já existentes 
     const loadUsers = async () => {
       try {
         const users = await AsyncStorage.getItem('users');
@@ -31,9 +31,9 @@ export default function Login({ navigation }) {
       const user = users.find(user => user.username === usuario && user.password === senha);
       if (user) {
         setMensagem('Autenticação bem-sucedida. Redirecionando...');
-        navigation.navigate('TelaPrincipal'); // Navega para a Tela Principal
+        navigation.navigate('PomodoroView'); // joga o usuário p/ tela pomodoroView
       } else {
-        setMensagem('Credenciais inválidas. Tente novamente.');
+        setMensagem('Credenciais inválidas... tente novamente.');
       }
     } catch (error) {
       console.error('Falha de login', error);
